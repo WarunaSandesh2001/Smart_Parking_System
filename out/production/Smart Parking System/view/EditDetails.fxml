@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="editDetailsContext" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.EditDetailsController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#616161" height="58.0" layoutX="-2.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke: white;" width="1403.0" />
+      <Label layoutX="21.0" layoutY="37.0" style="-fx-font-family: Quicksand; -fx-font-size: 35;" text="Smart Parking System" textFill="WHITE">
+         <font>
+            <Font size="27.0" />
+         </font>
+         <effect>
+            <Blend />
+         </effect>
+      </Label>
+      <Button layoutX="1276.0" layoutY="45.0" mnemonicParsing="false" onAction="#logout" prefHeight="38.0" prefWidth="85.0" style="-fx-background-color: #4B0082; -fx-border-color: white; -fx-border-radius: 10; -fx-background-radius: 10;" text="Log Out" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <JFXButton layoutX="-8.0" layoutY="101.0" onAction="#backToManagementActivities" text="&lt; Back" textFill="#ff3ff9">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Line endX="19.0" layoutX="369.0" layoutY="66.0" startX="0.333343505859375" stroke="WHITE" strokeWidth="3.0" />
+      <Label layoutX="406.0" layoutY="47.0" text="Edit Details" textFill="#ff96ea">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <JFXTabPane layoutX="8.0" layoutY="176.0" prefHeight="717.0" prefWidth="1384.0">
+         <tabs>
+            <Tab text="Edit Vehicle Details">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tblVehicleDetails" layoutX="13.0" layoutY="22.0" prefHeight="638.0" prefWidth="610.0" style="-fx-border-color: black;">
+                          <columns>
+                            <TableColumn fx:id="colVNumber" prefWidth="145.6666717529297" style="-fx-background-color: #FFD700; -fx-border-color: black;" text="Vehicle number" />
+                            <TableColumn fx:id="colVType" prefWidth="109.66665649414062" style="-fx-border-color: black;" text="Vehicle Type" />
+                              <TableColumn fx:id="colVMaximumWeight" prefWidth="171.0" style="-fx-border-color: black;" text="Maximum weight(Kg)" />
+                              <TableColumn fx:id="colNoOfPassengers" prefWidth="187.0" style="-fx-border-color: black;" text="Number of Passengers" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="704.0" layoutY="31.0" text="Update Vehicle Details" textFill="#da81e0">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="WHITE" glyphName="CIRCLE" layoutX="675.0" layoutY="52.0" size="15.0" />
+                        <TextField fx:id="txtSearchingVNoToUpdate" layoutX="871.0" layoutY="80.0" prefHeight="39.0" prefWidth="161.0" style="-fx-font-size: 18; -fx-background-color: #DCDCDC;" />
+                        <Label layoutX="711.0" layoutY="89.0" text="Enter Vehicle No. :" textFill="#cee4ee">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="txtVehicleWeight" focusColor="#0040ff" labelFloat="true" layoutX="705.0" layoutY="220.0" prefHeight="31.0" prefWidth="231.0" promptText="Maximum weight" style="-fx-text-inner-color: white; -fx-prompt-text-fill: #778899;" unFocusColor="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtNumberOfPassengers" focusColor="#0040ff" labelFloat="true" layoutX="1016.0" layoutY="220.0" prefHeight="31.0" prefWidth="231.0" promptText="Number Of Passengers" style="-fx-text-inner-color: white; -fx-prompt-text-fill: #778899;" unFocusColor="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <Button layoutX="1244.0" layoutY="312.0" mnemonicParsing="false" onAction="#updateVehicleDetails" style="-fx-background-color: #00BFFF;" text="Update" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Label layoutX="704.0" layoutY="389.0" text="Delete Vehicle Details" textFill="#da81e0">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="WHITE" glyphName="CIRCLE" layoutX="675.0" layoutY="411.0" size="15.0" />
+                        <Label layoutX="709.0" layoutY="462.0" text="Enter Vehicle No to Delete : " textFill="#cee4ee">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtSearchingVNoToDelete" layoutX="946.0" layoutY="456.0" prefHeight="39.0" prefWidth="161.0" style="-fx-font-size: 18; -fx-background-color: #DCDCDC;" />
+                        <Button layoutX="1244.0" layoutY="532.0" mnemonicParsing="false" onAction="#deleteVehicle" prefHeight="37.0" prefWidth="78.0" style="-fx-background-color: #00BFFF;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Label layoutX="771.0" layoutY="141.0" prefHeight="21.0" prefWidth="553.0" text="If you want to update Vehicle No. or Vehicle type. " textFill="RED" />
+                        <Label layoutX="768.0" layoutY="165.0" prefHeight="21.0" prefWidth="553.0" text=" You should delete vehicle details and reEnter.." textFill="RED" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Edit Driver Details">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="784.0" layoutY="79.0" text="Enter Driver NIC. :" textFill="#cee4ee">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="783.0" layoutY="27.0" text="Update Driver Details" textFill="#da81e0">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tblDriverDetails" layoutX="20.0" layoutY="23.0" prefHeight="640.0" prefWidth="700.0" style="-fx-border-color: black;">
+                          <columns>
+                            <TableColumn fx:id="colDName" prefWidth="97.3333740234375" style="-fx-border-color: black;" text="Driver Name" />
+                            <TableColumn fx:id="colDNIC" prefWidth="133.6666259765625" style="-fx-border-color: black; -fx-background-color: #FFD700;" text="NIC" />
+                              <TableColumn fx:id="colDDrivingLicenseNo" prefWidth="145.6666259765625" style="-fx-border-color: black;" text="Driving License No." />
+                              <TableColumn fx:id="colDAddress" prefWidth="179.0" style="-fx-border-color: black;" text="Address" />
+                              <TableColumn fx:id="colDContactNo" prefWidth="144.0" style="-fx-border-color: black;" text="Contact No." />
+                          </columns>
+                        </TableView>
+                        <FontAwesomeIconView fill="WHITE" glyphName="CIRCLE" layoutX="757.0" layoutY="50.0" />
+                        <TextField fx:id="txtSearchingDNICToUpdate" layoutX="946.0" layoutY="77.0" prefHeight="31.0" prefWidth="166.0">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                        </TextField>
+                        <JFXTextField fx:id="txtNewDriverName" focusColor="#0543ff" labelFloat="true" layoutX="742.0" layoutY="148.0" prefHeight="39.0" prefWidth="253.0" promptText="New Driver Name" style="-fx-text-inner-color: white; -fx-prompt-text-fill: #778899;" unFocusColor="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtDriverNewNIC" focusColor="#0543ff" labelFloat="true" layoutX="1062.0" layoutY="148.0" prefHeight="39.0" prefWidth="253.0" promptText="New NIC" style="-fx-text-inner-color: white; -fx-prompt-text-fill: #778899;" unFocusColor="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtNewDrivingLicenseNo" focusColor="#0543ff" labelFloat="true" layoutX="742.0" layoutY="234.0" prefHeight="39.0" prefWidth="253.0" promptText="New Driving License No." style="-fx-text-inner-color: white; -fx-prompt-text-fill: #778899;" unFocusColor="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtNewAddress" focusColor="#0543ff" labelFloat="true" layoutX="1063.0" layoutY="234.0" prefHeight="39.0" prefWidth="253.0" promptText="New Address" style="-fx-text-inner-color: white; -fx-prompt-text-fill: #778899;" unFocusColor="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtNewContactNumber" focusColor="#0543ff" labelFloat="true" layoutX="743.0" layoutY="320.0" prefHeight="39.0" prefWidth="253.0" promptText="New Contact Number" style="-fx-text-inner-color: white; -fx-prompt-text-fill: #778899;" unFocusColor="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <Button layoutX="1272.0" layoutY="345.0" mnemonicParsing="false" onAction="#updateDriverDetails" style="-fx-background-color: #00BFFF;" text="Update" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Label layoutX="783.0" layoutY="449.0" text="Delete Driver Details" textFill="#da81e0">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="WHITE" glyphName="CIRCLE" layoutX="757.0" layoutY="473.0" />
+                        <Label layoutX="798.0" layoutY="535.0" text="Enter Driver NIC to Delete : " textFill="#cee4ee">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtSearchingDriverNICToDelete" layoutX="1027.0" layoutY="535.0" prefHeight="31.0" prefWidth="166.0">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                        </TextField>
+                        <Button layoutX="1273.0" layoutY="584.0" mnemonicParsing="false" onAction="#deleteDriverDetails" style="-fx-background-color: #00BFFF;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <JFXButton layoutX="1135.0" layoutY="47.0" onAction="#goToSummery" text="Summery" textFill="WHITE" underline="true">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="995.0" layoutY="47.0" text="Edit details" textFill="WHITE" underline="true">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

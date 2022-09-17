@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainDisplayContext" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainDisplayController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke: #4B0082; -fx-stroke-width: 10;" width="1400.0" AnchorPane.leftAnchor="0.0" />
+      <Label layoutX="507.0" layoutY="61.0" text="Smart Parking" textFill="#f7f7f7" AnchorPane.leftAnchor="507.0">
+         <font>
+            <Font name="Times New Roman" size="73.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="71.0" fitWidth="61.0" layoutX="1316.0" layoutY="11.0" onMouseClicked="#exitProgram" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Exit.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="180.0" fitWidth="156.0" layoutX="10.0" layoutY="10.0">
+         <image>
+            <Image url="@../assets/54474.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="1334.0" layoutY="60.0" onMouseClicked="#exitProgram1" text="exit" textFill="RED">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <AnchorPane layoutX="10.0" layoutY="200.0" prefHeight="689.0" prefWidth="1380.0" style="-fx-background-color: white;">
+         <children>
+            <FontAwesomeIconView fill="#0900ff" glyphName="REFRESH" layoutX="25.0" layoutY="38.0" onMouseClicked="#reloadPage" size="25.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIconView>
+            <Label layoutX="12.0" layoutY="41.0" onMouseClicked="#reloadPage1" text="refresh" textFill="#5005ff">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+         </children></AnchorPane>
+      <Button fx:id="btnParkVehicle" layoutX="895.0" layoutY="552.0" mnemonicParsing="false" onAction="#goToPark" prefHeight="40.0" prefWidth="264.0" style="-fx-background-radius: 10; -fx-background-color: #a1a1a1;" text="Park Vehicle">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnOnDeliveryShift" layoutX="895.0" layoutY="630.0" mnemonicParsing="false" onAction="#goToDelivery" prefHeight="40.0" prefWidth="264.0" style="-fx-background-radius: 10; -fx-background-color: #a1a1a1;" text="On Dilivery Shift">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="managementLogin" layoutX="812.0" layoutY="781.0" mnemonicParsing="false" onAction="#goToManagementLoginForm" prefHeight="52.0" prefWidth="420.0" style="-fx-background-radius: 10; -fx-background-color: #151CBF;" text="Management Log in" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="txtShowTime" layoutX="842.0" layoutY="279.0" prefHeight="152.0" prefWidth="437.0" style="-fx-background-color: #DCDCDC; -fx-border-color: #4B0082; -fx-border-width: 2;">
+         <font>
+            <Font size="64.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </TextField>
+      <TextField fx:id="txtShowDate" layoutX="844.0" layoutY="281.0" style="-fx-background-color: #DCDCDC;">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor></TextField>
+      <JFXComboBox fx:id="cmbSelectVehicle" focusColor="#0b070d" layoutX="232.0" layoutY="279.0" prefHeight="31.0" prefWidth="285.0" style="-fx-background-color: #DCDCDC;" unFocusColor="INDIGO">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXComboBox>
+      <Label layoutX="85.0" layoutY="284.0" prefHeight="28.0" prefWidth="127.0" text="Select Vehicle">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="displayVehicleType" layoutX="232.0" layoutY="385.0" prefHeight="32.0" prefWidth="286.0" style="-fx-background-color: #DCDCDC;" text="  " />
+      <Label layoutX="94.0" layoutY="388.0" prefHeight="28.0" prefWidth="127.0" text="Vehicle Type">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbDriver" focusColor="#0b070d" layoutX="232.0" layoutY="481.0" prefHeight="31.0" prefWidth="285.0" style="-fx-background-color: #DCDCDC;" unFocusColor="INDIGO">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXComboBox>
+      <Label layoutX="148.0" layoutY="485.0" prefHeight="28.0" prefWidth="71.0" text="Driver">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="123.0" layoutY="574.0" prefHeight="282.0" prefWidth="450.0" style="-fx-background-color: black;" />
+      <Label fx:id="lblSlotNumber" layoutX="241.0" layoutY="637.0" prefHeight="213.0" prefWidth="237.0" textFill="#fbff09">
+         <font>
+            <Font name="System Bold" size="130.0" />
+         </font>
+      </Label>
+      <Label layoutX="180.0" layoutY="597.0" style="-fx-font-family: Quicksand;" text="Your Parking Slot Number" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font></Label>
+      <Label layoutX="602.0" layoutY="29.0" text="Saman Rice Company" textFill="#60b543">
+         <font>
+            <Font name="Times New Roman Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>

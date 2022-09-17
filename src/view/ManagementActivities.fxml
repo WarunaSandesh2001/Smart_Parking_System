@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ManagementActivitiesContext" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ManagementActivitiesController">
+   <children>
+      <AnchorPane layoutY="92.0" prefHeight="808.0" prefWidth="1400.0">
+         <children>
+            <FontAwesomeIconView fill="#2a00e4" glyphName="REFRESH" layoutX="20.0" layoutY="33.0" onMouseClicked="#refreshPage" size="25.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIconView>
+            <Label layoutX="7.0" layoutY="34.0" onMouseClicked="#refreshPage1" text="refresh" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#616161" height="58.0" layoutX="-2.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke: white;" width="1403.0" />
+      <Label layoutX="21.0" layoutY="37.0" style="-fx-font-family: Quicksand; -fx-font-size: 35;" text="Smart Parking System" textFill="WHITE">
+         <font>
+            <Font size="27.0" />
+         </font>
+         <effect>
+            <Blend />
+         </effect>
+      </Label>
+      <Button layoutX="1275.0" layoutY="46.0" mnemonicParsing="false" onAction="#logout" prefHeight="38.0" prefWidth="85.0" style="-fx-background-color: #4B0082; -fx-border-color: white; -fx-border-radius: 10; -fx-background-radius: 10;" text="Log Out" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <JFXTabPane layoutX="23.0" layoutY="178.0" prefHeight="711.0" prefWidth="1364.0" style="-fx-background-color: #D3D3D3;">
+         <tabs>
+            <Tab text="In Parking">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tblInParking" layoutX="63.0" layoutY="76.0" prefHeight="575.0" prefWidth="1237.0" style="-fx-border-color: black;">
+                           <columns>
+                              <TableColumn fx:id="colVehicleNumber" prefWidth="234.0" style="-fx-border-color: black;" text="Vehicle Number" />
+                              <TableColumn fx:id="colVehicleType" prefWidth="273.0" style="-fx-border-color: black;" text="Vehicle Type" />
+                              <TableColumn fx:id="colParkingSlot" prefWidth="376.3333740234375" style="-fx-border-color: black;" text="Parking Slot" />
+                              <TableColumn fx:id="colParkedTime" prefWidth="380.6666259765625" style="-fx-border-color: black; -fx-background-color: #FFA500;" text="Parked Time" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="On Delivery">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tblOnDelivery" layoutX="63.0" layoutY="76.0" prefHeight="576.0" prefWidth="1237.0" style="-fx-border-color: black;">
+                           <columns>
+                              <TableColumn fx:id="colVNumber" prefWidth="230.6666259765625" style="-fx-border-color: black;" text="Vehicle Number" />
+                              <TableColumn fx:id="colVType" prefWidth="286.3333740234375" style="-fx-border-color: black;" text="Vehicle Type" />
+                              <TableColumn fx:id="colDriverName" prefWidth="342.666748046875" style="-fx-border-color: black;" text="Driver Name" />
+                              <TableColumn fx:id="colLeftTime" prefWidth="373.6669921875" style="-fx-border-color: black; -fx-background-color: #FFA500;" text="Left Time" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <Button layoutX="1058.0" layoutY="118.0" mnemonicParsing="false" onAction="#loadAddVehicle" prefHeight="31.0" prefWidth="136.0" style="-fx-background-color: #0000CD;" text="Add Vehicle" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button layoutX="1232.0" layoutY="119.0" mnemonicParsing="false" onAction="#loadAddDriver" prefHeight="31.0" prefWidth="136.0" style="-fx-background-color: #0000CD;" text="Add Driver" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <JFXButton layoutX="1135.0" layoutY="47.0" onAction="#goToSummery" text="Summery" textFill="WHITE" underline="true">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="995.0" layoutY="47.0" onAction="#editDetails" text="Edit details" textFill="WHITE" underline="true">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

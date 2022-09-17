@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AddNewVehicleContext" prefHeight="450.0" prefWidth="750.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddNewVehicleController">
+   <children>
+      <AnchorPane layoutX="3.0" layoutY="27.0" prefHeight="420.0" prefWidth="744.0" style="-fx-background-color: #708090;" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2e0151" height="27.0" onMouseDragged="#dragged" onMousePressed="#pressed" stroke="BLACK" strokeType="INSIDE" width="750.0" />
+      <Label layoutX="11.0" layoutY="2.0" text="Add Vehicle" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView fill="#d70f0f" glyphName="CLOSE" layoutX="722.0" layoutY="19.0" size="17.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </FontAwesomeIconView>
+      <AnchorPane layoutX="713.0" layoutY="1.0" onMouseClicked="#closeWindow" prefHeight="25.0" prefWidth="31.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <Button fx:id="add" layoutX="578.0" layoutY="385.0" mnemonicParsing="false" onAction="#addVehicle" prefHeight="33.0" prefWidth="108.0" style="-fx-background-color: #00BFFF;" text="Add">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtNumberOfPassengers" layoutX="184.0" layoutY="351.0" onAction="#goToAddButton" prefHeight="31.0" prefWidth="249.0" style="-fx-background-color: #DCDCDC;" />
+      <TextField fx:id="txtVehicleNumber" layoutX="184.0" layoutY="179.0" onAction="#goToMaximumWeightTXTField" prefHeight="31.0" prefWidth="249.0" style="-fx-background-color: #DCDCDC;" />
+      <TextField fx:id="txtMaximumWeight" layoutX="183.0" layoutY="267.0" onAction="#goToNumOfPassengerTXTField" prefHeight="31.0" prefWidth="249.0" style="-fx-background-color: #DCDCDC;" />
+      <Label layoutX="30.0" layoutY="181.0" text="Vehicle Number" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="269.0" text="Maximum weight" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="7.0" layoutY="355.0" text="Number of Passengers" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="476.0" layoutY="179.0" text="Vehicle Type" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbVehicle" layoutX="592.0" layoutY="179.0" prefHeight="31.0" prefWidth="131.0" style="-fx-background-color: #DCDCDC;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXComboBox>
+      <Circle fill="WHITE" layoutX="363.0" layoutY="91.0" radius="46.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke: black; -fx-stroke-width: 3;" />
+      <ImageView fitHeight="78.0" fitWidth="72.0" layoutX="322.0" layoutY="49.0">
+         <image>
+            <Image url="@../assets/AddVehicle1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="407.0" layoutY="272.0" text="Kg" />
+   </children>
+</AnchorPane>
